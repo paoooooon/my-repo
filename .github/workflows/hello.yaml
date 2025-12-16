@@ -1,14 +1,8 @@
-name: Manual 
-on: 
-    workflow_dispatch:
-        inputs:
-            gereeting:
-                type: string
-                default: Hello
-                required: true
-                description: Greet the world with this message
+name: Hello 
+on: push
 jobs:
     hello:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{inputs.gereeting}}"
+            - run: echo "Hello, World!"
+            - uses: actions/checkout@v4
